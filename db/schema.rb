@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026015954) do
+ActiveRecord::Schema.define(version: 20161026045018) do
 
   create_table "purchases", force: :cascade do |t|
     t.string   "purchaser_name"
     t.string   "item_desc"
-    t.float    "item_price"
+    t.decimal  "item_price"
     t.integer  "purchase_count"
     t.string   "merchant_addr"
     t.string   "merchant_name"

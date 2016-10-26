@@ -1,7 +1,7 @@
 class CsvHandler
 
   def initialize(file)
-    @totalRevenue = 0
+    @total_revenue = 0
     @file = file
     @temp_csv = []
     @fixed_file_path = Rails.root.join('public', 'purchases.csv')
@@ -24,7 +24,7 @@ class CsvHandler
     end
   end
 
-  def totalRevenue()
+  def total_revenue()
     CSV.foreach(@fixed_file_path, headers: true) do |row|
       @totalRevenue += row[2].to_f*row[3].to_i
     end
