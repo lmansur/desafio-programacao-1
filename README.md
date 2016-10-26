@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Como rodar
 
-Things you may want to cover:
+Clone o repositorio do github
 
-* Ruby version
+```
+git clone git@github.com:lmansur/desafio-programacao-1.git
+```
 
-* System dependencies
+Vá para o diretório do app e rode os seguintes comandos:
 
-* Configuration
+```
+cd desafio-programacao-1/
+bundler install
+rails db:migrate
+rails s
+```
 
-* Database creation
+Pronto! O app está pronto para ser usado.
 
-* Database initialization
+## Features
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+O site recebe um arquivo delimitado por tabs, importa os dados das compras e calcula o valor da receita total.
+Para importar o arquivo, você precisa estar logado. O cadastro pode ser feito manualmente ou usando o Facebook.
