@@ -1,0 +1,9 @@
+%h2 Import Purchases
+
+- if flash[:revenue]
+  .alert.alert-success
+    = flash[:revenue]
+
+= form_tag import_purchases_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag 'Import'
