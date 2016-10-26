@@ -4,8 +4,13 @@
 
 Clone o repositorio do github
 
+ssh
 ```
 git clone git@github.com:lmansur/desafio-programacao-1.git
+```
+ou https
+```
+git clone https://github.com/lmansur/desafio-programacao-1.git
 ```
 
 Agora rode os seguintes comandos:
