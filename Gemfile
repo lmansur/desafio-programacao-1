@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml'
 gem 'haml-rails'
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'bootstrap-sass'
 
 group :development, :test do
