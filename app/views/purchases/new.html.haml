@@ -4,6 +4,7 @@
   .alert.alert-success
     = flash[:revenue]
 
-= form_tag import_purchases_path, multipart: true do
-  = file_field_tag :file
-  = submit_tag 'Import'
+
+= form_for @purchase do |f|
+  = f.file_field :file
+  = f.submit 'Import'

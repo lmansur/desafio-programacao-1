@@ -4,15 +4,20 @@ class PurchasesController < ApplicationController
     def index
     end
 
+    def show
+      @purchase = Purchase.find(params[:id])
+    end
+
     def new
       @purchase = Purchase.new
     end
 
-    def import
+    def create
+
       file_path = 'public'
       file_name = 'purchases.csv'
 
-      header = CsvHandler::RenameHeaders.new(params[:file])
+      header = CsvHandler::RenameHeaders.new(params[:purchase][:file])
       header.rename_headers
 
       importer = CsvHandler::ImportData.new(file_path, file_name)
