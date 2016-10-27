@@ -9,8 +9,9 @@
   %body
     = render 'layouts/shared/header'
     .container
-      %p.notice
-        = notice
+      -if flash[:notice]
+        %p.notice.alert.alert-success
+          = notice
       %p.alert
         = alert
       = yield

@@ -5,7 +5,7 @@ class PurchasesController < ApplicationController
     end
 
     def show
-      @purchase = Purchase.find(params[:id])
+
     end
 
     def new
@@ -13,7 +13,6 @@ class PurchasesController < ApplicationController
     end
 
     def create
-
       file_path = 'public'
       file_name = 'purchases.csv'
 
@@ -24,8 +23,8 @@ class PurchasesController < ApplicationController
       importer.import
 
       revenue = CsvHandler::TotalRevenue.new(file_path, file_name)
-      total_revenue = revenue.total_revenue
-      flash[:revenue] = "Total revenue from imported file: #{total_revenue}"
-      redirect_to new_purchase_path
+      revenue.total_revenue
+      redirect_to import_path(Import.last)
+      flash[:notice] = 'Purchases successfully added to database.'
     end
 end

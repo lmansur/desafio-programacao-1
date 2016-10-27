@@ -1,8 +1,8 @@
 module CsvHandler
   class ImportData
-    def initialize(path, filename)
-      @path = path
-      @filename = filename
+    def initialize(file_path, file_name)
+      @path = file_path
+      @filename = file_name
     end
 
     def import
@@ -10,8 +10,6 @@ module CsvHandler
       @import = Import.create
       CSV.foreach(file_path, headers: true) do |row|
         @import.purchases.create(row.to_hash)
-        #Purchase.create!(row.to_hash)
-        #@import = Purchase.last.create_import(import.last)
       end
     end
   end
