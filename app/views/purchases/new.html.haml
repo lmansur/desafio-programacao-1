@@ -4,7 +4,6 @@
   .alert.alert-success
     = flash[:revenue]
 
-
 = form_for @purchase do |f|
   = f.file_field :file
   = f.submit 'Import'
