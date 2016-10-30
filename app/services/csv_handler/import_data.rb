@@ -11,6 +11,7 @@ module CsvHandler
       CSV.foreach(file_path, headers: true) do |row|
         @import.purchases.create(row.to_hash)
       end
+      @import
     end
   end
 end

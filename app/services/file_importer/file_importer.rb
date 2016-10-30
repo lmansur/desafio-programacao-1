@@ -14,6 +14,11 @@ module FileImporter
       true
     end
 
+    def fetch_import
+      @last_import
+    end
+
+
     private
 
       def rename_headers
@@ -23,11 +28,11 @@ module FileImporter
 
       def import_data
         importer = CsvHandler::ImportData.new(@new_file_path, @new_file_name)
-        importer.import
+        @last_import = importer.import
       end
 
       def total_revenue
-        revenue = CsvHandler::TotalRevenue.new(@new_file_path, @new_file_name)
+        revenue = CsvHandler::TotalRevenue.new(@new_file_path, @new_file_name, @last_import)
         revenue.total_revenue
       end
 
