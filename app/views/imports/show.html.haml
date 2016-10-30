@@ -1,0 +1,23 @@
+%h2 Import Details
+
+%table
+  %tr
+    %th Purchaser Name
+    %th Item Description
+    %th Item Price
+    %th Purchase Count
+    %th Merchant Address
+    %th Merchant Name
+    -6.times do
+      %th{colspan: '2'}
+  - @purchase.each do |purchase|
+    %tr
+      %td=purchase.purchaser_name
+      %td=purchase.item_desc
+      %td=purchase.item_price
+      %td=purchase.purchase_count
+      %td=purchase.merchant_addr
+      %td=purchase.merchant_name
+  %h3
+    Total Revenue: $
+    =@import.total_revenue.to_f

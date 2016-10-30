@@ -1,0 +1,9 @@
+%h2 Import Purchases
+
+- if flash[:revenue]
+  .alert.alert-success
+    = flash[:revenue]
+
+= form_for @purchase do |f|
+  = f.file_field :file
+  = f.submit 'Import'
