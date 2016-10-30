@@ -26,5 +26,5 @@ Pronto! O app está pronto para ser usado.
 
 ## Features
 
-O site recebe um arquivo delimitado por tabs, importa os dados das compras para o db e calcula o valor da receita total.
+O site recebe um arquivo delimitado por tabs, importa os dados das compras para o db e calcula o valor da receita total, redirecionando para uma pagina que lista as compras importadas.
 Para importar o arquivo, você precisa estar logado. O cadastro pode ser feito manualmente ou usando o Facebook.
